@@ -43,4 +43,4 @@ Ce projet implémente un formulaire Symfony pour un site e-commerce selon les pr
 - Créer l'image dans `public/images/Appareil.jpg`
 
 ## Routes
-- `/` : Page produit avec formulaire
+- `/appareil` : Page produit avec formulaire
