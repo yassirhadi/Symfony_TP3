@@ -1,4 +1,5 @@
 <?php
+// src/Kernel.php
 
 namespace App;
 

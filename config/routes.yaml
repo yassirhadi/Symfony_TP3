@@ -1,5 +1,19 @@
+# Ce fichier peut être vide, les routes sont définies via les attributs
+# Si vous avez un fichier routes/annotations.yaml, assurez-vous qu'il contient:
+
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+     resource: ../src/Controller/
+     type: attribute
+
+
+#app_home:
+#    path: /
+#    controller: App\Controller\HomeController::index
+
+app_catalog:
+    path: /catalog
+    controller: App\Controller\CatalogController::index
+
+app_payment:
+    path: /payment
+    controller: App\Controller\PaymentController::index

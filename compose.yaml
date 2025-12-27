@@ -7,12 +7,11 @@ services:
             dockerfile: ./nginx/Dockerfile
         restart: always
         ports:
-            - "80:80"
+            - "8000:80"
             - "443:443"
         volumes:
             - .:/var/www/html:ro,cached
             - ./var/log/nginx:/var/log/nginx
-            - ./infra/nginx/conf.d:/etc/nginx/conf.d
             - ./infra/nginx/conf.d:/etc/nginx/conf.d
         depends_on:
             - php
@@ -62,6 +61,16 @@ services:
             - internal_network
         volumes:
             - db_admin_data:/var/www/html
+
+    # AJOUT DU SERVICE MAILCATCHER (CORRIGÉ)
+    mailcatcher:
+        image: yappabe/mailcatcher
+        ports:
+            - "1025:1025"  # Port SMTP
+            - "1080:1080"  # Interface web
+        networks:
+            - internal_network
+
 volumes:
     db_admin_data:
     mysql:
